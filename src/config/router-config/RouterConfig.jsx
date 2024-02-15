@@ -11,7 +11,7 @@ const RouterConfig = () => {
                 <Navbar />
                 <Routes>
                     <Route path='' element={<Home />} />
-                    <Route path='singleproduct' element={<SingleProduct/>} />
+                    <Route path='singleproduct/:id' element={<SingleProduct/>} />
                 </Routes>
             </BrowserRouter>
         </>
