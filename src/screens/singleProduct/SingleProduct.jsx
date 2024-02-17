@@ -21,7 +21,7 @@ const SingleProduct = () => {
   return (
     <>
       {
-        dataSingleProduct !=null ? <SingleCard title={dataSingleProduct.title} desc={dataSingleProduct.description} category={dataSingleProduct.category}  price={dataSingleProduct.price} image={dataSingleProduct.image}/> : <h1>No Item Found</h1>
+        dataSingleProduct !=null ? <SingleCard title={dataSingleProduct.title} desc={dataSingleProduct.description} category={dataSingleProduct.category}  price={dataSingleProduct.price} image={dataSingleProduct.image} id={dataSingleProduct.id}/> : <h1>No Item Found</h1>
       }
     </>
   )

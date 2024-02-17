@@ -1,7 +1,36 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import {useDispatch, useSelector} from 'react-redux'
+import { addcart, removecart } from '../config/redux-config/reducers/cartSlice';
 function SingleCard(props) {
+    // useDispatch 
+    const dispatch = useDispatch()
+    // useSelector 
+    const selector = useSelector(state => state.cartsItems)
+    
+
+    const ProductAddToCart =()=>{
+        if(selector.length === 0){
+            dispatch(addcart({
+                title: props.title,
+                description: props.desc,
+                image: props.image,
+                price: props.price,
+                id: props.id
+            }))
+            console.log('data added to cart array');
+            console.log(selector);
+        }else {
+            console.log('item exist');
+        }
+    }
+    const productremove = ()=>{
+        dispatch(removecart({
+            index: props.id
+        }))
+         console.log(selector);
+        
+    }
     return (
         <Card style={{ width: '100%' }}>
             <div className='d-flex w-100 p-5' >
@@ -21,7 +50,8 @@ function SingleCard(props) {
                         <h5>{props.price}</h5>
                         
                         
-                        <Button variant="primary" className='mt-5' >Add To Card</Button>
+                        <Button variant="primary" className='mt-5' onClick={ProductAddToCart} >Add To Card</Button>
+                        <h1 onClick={productremove}>delete</h1>
                     </Card.Body>
 
                 </div>
