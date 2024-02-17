@@ -8,10 +8,13 @@ const Nav = () => {
     <>
       <Navbar className="bg-body-tertiary" >
         <Container>
-          <Navbar.Brand >React</Navbar.Brand>
+          <Navbar.Brand >Fake Shop</Navbar.Brand>
 
           <Navbar.Collapse className="justify-content-end">
-            <img src={svg} alt="logo" />
+            <span class="fs-2 material-symbols-outlined">
+              shopping_cart
+            </span>
+            <div className="number w-1 h-1 text-white bg-primary  rounded-circle px-2 mb-4" >0</div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
