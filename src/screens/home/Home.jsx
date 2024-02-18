@@ -12,7 +12,7 @@ const Home = () => {
     axios.get('https://fakestoreapi.com/products').then((res) => {
     //   const data = res.data
     //   console.log(data);
-    console.log(res.data);
+    // console.log(res.data);
     setProductData(res.data)
       
     }).catch((err) => {

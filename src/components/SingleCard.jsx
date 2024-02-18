@@ -10,7 +10,7 @@ function SingleCard(props) {
     
 
     const ProductAddToCart =()=>{
-        if(selector.length === 0){
+        if(selector.length >= 0){
             dispatch(addcart({
                 title: props.title,
                 description: props.desc,
