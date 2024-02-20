@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import React from 'react'
 
-const CartItemBox = ({title ,description, image , id}) => {
+const CartItemBox = ({title ,description, image , id , price}) => {
     // useNavigate 
    
 
@@ -13,16 +13,30 @@ const CartItemBox = ({title ,description, image , id}) => {
     
   return (
   
-    <Card style={{ width: '18rem' }} className='mt-5'>
-      <Card.Img style={{width:'100%' , height:'300px', padding:'10px'}} variant="top" src={image} />
-      <Card.Body>
-        <Card.Title>{title.slice(0, 20)}...</Card.Title>
-        <Card.Text>
-          {description.slice(0,70)}.....
-        </Card.Text>
-        <Button variant="primary" >Delete</Button>
-      </Card.Body>
-    </Card>
+    <Card style={{ width: '100%' }}>
+    <div className='d-flex w-100 p-5' >
+        <div className='w-100'>
+            <Card.Img className='h-100 ' variant="top" src={image}/>
+
+        </div>
+        <div>
+            <Card.Body>
+                <h3 className='text-primary '>Title</h3>
+                <h5>{title}</h5>
+                <h3 className='text-primary mt-3'>Description</h3>
+                <h5>{description}</h5>
+                <h3 className='text-primary mt-3'>Price</h3>
+                <h5>{price}</h5>
+                
+                
+                <Button variant="primary" className='mt-5' >Buy Now</Button>
+              
+            </Card.Body>
+
+        </div>
+    </div>
+
+</Card>
   )
 }
 

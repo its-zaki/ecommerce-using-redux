@@ -24,13 +24,13 @@ function SingleCard(props) {
             console.log('item exist');
         }
     }
-    const productremove = ()=>{
-        dispatch(removecart({
-            index: props.id
-        }))
-         console.log(selector);
+    // const productremove = ()=>{
+    //     dispatch(removecart({
+    //         index: props.id
+    //     }))
+    //      console.log(selector);
         
-    }
+    // }
     return (
         <Card style={{ width: '100%' }}>
             <div className='d-flex w-100 p-5' >
@@ -51,7 +51,7 @@ function SingleCard(props) {
                         
                         
                         <Button variant="primary" className='mt-5' onClick={ProductAddToCart} >Add To Card</Button>
-                        <h1 onClick={productremove}>delete</h1>
+                       
                     </Card.Body>
 
                 </div>
