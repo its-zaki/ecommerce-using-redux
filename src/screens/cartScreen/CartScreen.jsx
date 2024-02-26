@@ -4,7 +4,7 @@ import CartItemBox from '../../components/CartItemBox'
 
 const CartScreen = () => {
     const selector  = useSelector(state => state.cartsItems)
-    console.log(selector);
+    // console.log(selector);
 
   return (
     <>

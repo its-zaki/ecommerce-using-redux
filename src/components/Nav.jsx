@@ -4,6 +4,8 @@ import Navbar from "react-bootstrap/Navbar";
 import svg from "../assets/react.svg";
 import Dropdown from "react-bootstrap/Dropdown";
 import {useNavigate} from 'react-router-dom'
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const Nav = () => {
   const navigate = useNavigate()
@@ -14,6 +16,10 @@ const Nav = () => {
   const GoToCart = ()=>{
     navigate('cartscreen')
   }
+
+  // get data from redux 
+  const selector = useSelector(state => state.cartsItems)
+  // console.log(selector.length);
   
   return (
     <>
@@ -37,7 +43,7 @@ const Nav = () => {
                     </span>
                   </div>
                   <div className="number w-1 h-1 text-white bg-primary  rounded-circle px-2 mb-4">
-                    0
+                    {selector.length}
                   </div>
                 </div>
               </Dropdown.Toggle>
